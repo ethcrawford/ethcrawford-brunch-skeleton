@@ -1,0 +1,40 @@
+{
+  "name": "ethcrawford-brunch-skeleton",
+  "version": "1.0.0",
+  "description": "The initial configuration of the brunch for the front-end development using pug, stylus and bootstrap 4.",
+  "keywords": [
+    "skeleton",
+    "brunch",
+    "pug",
+    "stylus",
+    "bootstrap 4",
+    "boilerplate"
+  ],
+
+  "homepage": "https://github.com/ethcrawford/ethcrawford-brunch-skeleton",
+  "bugs": {
+    "url": "https://github.com/ethcrawford/ethcrawford-brunch-skeleton",
+    "email": "ethcrawford@gmail.com"
+  },
+
+  "license": "ISC",
+  "author": {
+    "name": "Ethan Crawford",
+    "email": "ethcrawford@gmail.com",
+    "url": "https://github.com/ethcrawford"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ethcrawford/ethcrawford-brunch-skeleton.git"
+  },
+
+  "scripts": {
+    "watch": "brunch watch",
+    "server": "brunch watch --server",
+    "build": "brunch build --production"
+  },
+
+  "dependencies": {},
+  "devDependencies": {}
+}
