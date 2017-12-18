@@ -5,19 +5,29 @@ exports.config = {
   },
   files: {
     javascripts: {
-      joinTo: 'js/app.js'
+      joinTo: 'app.js'
     },
     stylesheets: {
-      joinTo: 'css/app.css'
+      joinTo: 'app.css',
+      order: {
+        after: /styl\/app\.styl/
+      }
     },
     templates: {
-      joinTo: 'js/app.js'
+      joinTo: 'app.js'
     }
   },
   npm: {
-    enabled: true
+    enabled: true,
+    globals: {
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: 'popper.js'
+    }
   },
   plugins: {
+    on: ['postcss-brunch'],
     autoReload: {
       enabled: {
         css: 'on',
@@ -32,6 +42,10 @@ exports.config = {
       presets: ['env'],
       ignore: [/^node_modules/]
     },
+    cleancss: {
+      keepSpecialComments: 0,
+      removeEmpty: true
+    },
     gzip: {
       paths: {
         javascript: 'javascripts',
@@ -41,8 +55,8 @@ exports.config = {
       renameGzipFilesToOriginalFiles: false
     },
     imageoptmizer: {
-      smushit: false,
-      path: 'app/images'
+      smushit: true,
+      path: 'app/assets'
     },
     postcss: {
       processors: [
@@ -55,7 +69,7 @@ exports.config = {
       basedir: 'app',
       staticBasedir: 'app/assets',
       staticPretty: false,
-      pugRuntime: true,
+      pugRuntime: false,
       compileDebug: true,
       sourceMap: true
     },
@@ -77,31 +91,39 @@ exports.config = {
         format: 'auto',
         quality: 100
       }
+    },
+    stylus: {
+      plugins: [
+        require('autoprefixer-stylus')({browsers: ['last 8 versions']})
+      ]
     }
   },
   conventions: {
     ignored: [
-      'app/assets/**/*.md',
-      'app/assets/views/includes/*.pug',
-      'app/styl/imports/*.styl'
+      /\.md$/,
+      /views\/includes\//,
+      /styl\/imports\//
     ],
-    assets: [/files\//]
+    assets: [
+      /assets\//,
+      /files\//
+    ]
   },
   modules: {
     wrapper: 'commonjs',
     definition: 'commonjs',
     autoRequire: {
-      'js/app.js': ['initialize']
+      'app.js': ['initialize']
     }
   },
   notifications: {
     app: 'Brunch',
     levels: ['error', 'warn', 'info']
   },
-  optimize: true,
+  optimize: false,
   server: {
     port: 3333,
-    hostname: '0.0.0.0',
+    hostname: 'localhost',
     base: '',
     indexPath: 'index.html',
     noPushState: true,

@@ -2,6 +2,20 @@
 doctype html
 html(lang='en')
   head
-    title test
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no')
+    meta(name='description' content='Brunch app')
+    meta(name='author' content='Ethan Crawford')
+
+    title Brunch
+    link(rel='stylesheet' href='app.css')
+
   body
-    h1 Hello!
+    #app
+      include ../includes/_page-header
+      h1 Hello!
+      h2 I'm Pug!
+
+      include ../includes/_page-footer
+    script(src='app.js')
