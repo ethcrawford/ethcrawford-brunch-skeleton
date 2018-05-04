@@ -47,6 +47,10 @@ exports.modules = {
 }
 
 exports.plugins = {
+  htmlPages: {
+    disabled: false,
+    compileAssets: true
+  },
   pug: {
     pugRuntime: false,
     compileDebug: false
