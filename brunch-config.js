@@ -3,6 +3,7 @@ var PATHS = {
   normalize: 'vendor/styles/normalize.min.css',
   modulargrid: 'vendor/styles/modular-grid.min.css',
   jquery: 'vendor/scripts/jquery.min.js',
+  visuallyhidden: 'vendor/styles/visually-hidden.min.css',
   base: 'app/styles/blocks/base.styl'
 }
 
@@ -23,6 +24,7 @@ exports.files = {
         PATHS.boxmodel,
         PATHS.normalize,
         PATHS.modulargrid,
+        PATHS.visuallyhidden,
         PATHS.base
       ]
     }
