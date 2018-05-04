@@ -1,0 +1,8 @@
+widerthan(v)
+    c = '(min-width: %s)' % v
+    @media c
+        {block}
+narrowerthan(v)
+    c = '(max-width: %s)' % v
+    @media c
+        {block}

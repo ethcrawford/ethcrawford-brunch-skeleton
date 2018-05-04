@@ -1,1 +1,1 @@
-Place for pug sources
+# Views

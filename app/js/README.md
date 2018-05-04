@@ -1,1 +1,0 @@
-Place for javascript sources
