@@ -1,1 +1,1 @@
-/*! Box Model */ *,::after,::before{box-sizing:border-box}
+/*! Box Model */ *,::after,::before{-webkit-box-sizing:border-box;box-sizing:border-box}
